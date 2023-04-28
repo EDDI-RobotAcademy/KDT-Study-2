@@ -40,4 +40,5 @@ export default {
         alert("문제 발생!");
       });
   },
+
 };
