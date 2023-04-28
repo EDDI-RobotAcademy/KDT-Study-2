@@ -1,13 +1,19 @@
 import {
-  REQUEST_PRODUCT_LIST_TO_SPRING,
-  REQUEST_PRODUCT_TO_SPRING,
+    REQUEST_PRODUCT_LIST_TO_SPRING,
+    REQUEST_PRODUCT_TO_SPRING,
 } from "./mutation-types";
 
 import axiosInst from "@/utility/axiosInst";
 
 export default {
-  requestCreateProductToSpring({}, payload) {
-    const { name, price, company, manufactureDate, category } = payload;
+    requestProductListoSpring({ commit }) {
+        return axiosInst.get('/product/list')
+            .then((res) => {
+                commit(REQUEST_PRODUCT_LIST_TO_SPRING, res.data)
+            })
+    },
+    requestCreateProductToSpring({}, payload) {
+        const { name, price, company, manufactureDate, category } = payload;
 
     return axiosInst
       .post("/product/register", {
