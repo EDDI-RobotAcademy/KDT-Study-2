@@ -15,20 +15,29 @@ export default {
     requestCreateProductToSpring({}, payload) {
         const { name, price, company, manufactureDate, category } = payload;
 
-        return axiosInst
-            .post("/product/register", {
-                name,
-                price,
-                company,
-                manufactureDate,
-                category,
-            })
+    return axiosInst
+      .post("/product/register", {
+        name,
+        price,
+        company,
+        manufactureDate,
+        category,
+      })
+      .then((res) => {
+        alert("상품 등록 성공!");
+        return res;
+      })
+      .catch(() => {
+        alert("문제 발생!");
+      });
+  },
+  requestDeleteProductToSpring ({}, productId) {
+        return axiosInst.delete(`/jpa-product/${productId}`)
             .then((res) => {
-                alert("상품 등록 성공!");
-                return res;
+                alert('삭제 성공!')
             })
             .catch(() => {
-                alert("문제 발생!");
-            });
+                alert('문제 발생!')
+            })
     },
 };
