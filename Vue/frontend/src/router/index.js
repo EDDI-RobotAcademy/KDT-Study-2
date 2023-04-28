@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
 import ProductListPage from '@/views/product/ProductListPage.vue'
+import ProductReadPage from '@/views/product/ProductReadPage.vue'
 
 Vue.use(VueRouter)
 
@@ -24,6 +25,11 @@ const routes = [
     path: '/product-list-page',
     name: 'ProductListPage',
     component: ProductListPage
+  },
+  {
+    path: '/product-read-page',
+    name: 'ProductReadPage',
+    component: ProductReadPage
   },
 ]
 
