@@ -51,6 +51,23 @@ export default {
 
 }
 </script>
-<style lang="">
-    
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
+
+h3 {
+    color: darkslateblue;
+    font-family: 'Song Myung', serif;
+    text-shadow: 4px 4px 4px cornflowerblue;
+    font-size: 40px;
+}
+
+table {
+    border: 4px solid mediumpurple;
+    font-family: 'Song Myung', serif;
+    font-size: 20px;
+}
+
+td {
+    border: 2px solid lightskyblue;
+}
 </style>
