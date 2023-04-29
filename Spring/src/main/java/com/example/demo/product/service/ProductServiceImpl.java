@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class JpaProductServiceImpl implements ProductService {
+public class ProductServiceImpl implements ProductService {
 
     final private ProductRepository productRepository;
 
