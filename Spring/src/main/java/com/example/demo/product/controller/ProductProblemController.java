@@ -1,5 +1,7 @@
 package com.example.demo.product.controller;
 
+import com.example.demo.product.controller.form.RequestProductForm;
+import com.example.demo.product.entity.ProductEntity;
 import com.example.demo.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +26,6 @@ public class ProductProblemController {
     public ProductEntity registerProduct(@RequestBody RequestProductForm requestProductForm){
         log.info("registerProduct()");
 
-        productService.delete(productId);
+        return productService.register(requestProductForm.toProductEntity());
     }
 }

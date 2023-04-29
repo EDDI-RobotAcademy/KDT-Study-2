@@ -1,5 +1,6 @@
 package com.example.demo.product.service;
 
+import com.example.demo.product.entity.ProductEntity;
 import com.example.demo.product.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
