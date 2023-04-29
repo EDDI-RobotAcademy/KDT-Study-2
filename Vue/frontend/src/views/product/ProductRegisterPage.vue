@@ -1,12 +1,12 @@
 <template lang="">
     <div>
 
-        <register-button-form @submit="onSubmit"/>
+        <product-register-form @submit="onSubmit"/>
     </div>
 </template>
 <script>
 
-import RegisterButtonForm from '@/components/RegisterButtonForm.vue';
+import ProductRegisterForm from '@/components/product/ProductRegisterForm.vue';
 // RegisterButtonForm 컴포넌트를 가져옴
 import { mapActions } from 'vuex';
 // vuex에서 mapActions 함수를 가져옴.
@@ -15,9 +15,9 @@ const productModule = 'productModule'
 
 export default {
     components: {
-        RegisterButtonForm
+        ProductRegisterForm
     },
-    name: "RegisterButtonPage",
+    name: "ProductRegisterPage",
     methods: {
         ...mapActions(
             productModule, ['requestCreateProductToSpring']
