@@ -3,8 +3,8 @@
         <h2>상품 게시판</h2>        
         <p></p>
         <product-list-form :products="products"/>
-        <div>
-        <P></P>
+        <div  align="center">
+        <p></p>
         <router-link :to="{ name: 'ProductRegisterPage'}">
             상품 등록
         </router-link>
