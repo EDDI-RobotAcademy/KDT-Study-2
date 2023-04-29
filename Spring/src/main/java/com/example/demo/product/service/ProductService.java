@@ -1,6 +1,6 @@
 package com.example.demo.product.service;
 
-public interface JpaProductService {
+public interface ProductService {
 
     void delete(Long productId);
 

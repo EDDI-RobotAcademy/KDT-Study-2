@@ -1,6 +1,6 @@
 package com.example.demo.product.service;
 
-import com.example.demo.product.repository.JpaProductRepository;
+import com.example.demo.product.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class JpaProductServiceImpl implements JpaProductService {
+public class JpaProductServiceImpl implements ProductService {
 
-    final private JpaProductRepository productRepository;
+    final private ProductRepository productRepository;
 
     @Override
     public void delete(Long productId) {

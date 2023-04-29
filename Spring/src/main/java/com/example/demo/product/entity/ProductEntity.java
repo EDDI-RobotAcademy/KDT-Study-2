@@ -19,7 +19,7 @@ import java.util.Date;
 @ToString
 @NoArgsConstructor
 @Getter
-public class JpaProduct {
+public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productId;
@@ -30,7 +30,7 @@ public class JpaProduct {
     private LocalDate expDate;
     private String category;
 
-    public JpaProduct(String name, Integer price, String company, LocalDate manufactureDate, String category) {
+    public ProductEntity(String name, Integer price, String company, LocalDate manufactureDate, String category) {
         this.name = name;
         this.price = price;
         this.company = company;

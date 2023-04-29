@@ -1,6 +1,6 @@
 package com.example.demo.product.controller;
 
-import com.example.demo.product.service.JpaProductService;
+import com.example.demo.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/jpa-product")
-public class JpaProductController {
+@RequestMapping("product")
+public class ProductProblemController {
 
-    final private JpaProductService productService;
+    final private ProductService productService;
 
     @DeleteMapping("/{productId}")
     public void deleteProduct(@PathVariable("productId") Long productId) {
