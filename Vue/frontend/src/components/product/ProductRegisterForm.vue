@@ -57,7 +57,7 @@
 <script>
 
 export default {
-    name: "RegisterButtonForm",
+    name: "ProductRegisterForm",
     data() {
         return {
             name: '상품명',
