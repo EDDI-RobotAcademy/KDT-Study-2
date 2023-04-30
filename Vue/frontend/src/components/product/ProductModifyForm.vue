@@ -47,37 +47,37 @@
 </template>
 <script>
 export default {
-   props: {
-       product: {
-           type: Object,
-           required: true,
-           //required: true-꼭필요하다는 뜻
-       }
-   },
-   data () {
-       return {
-           name: '',
-           price: '',
-           company: '',
-           manufactureDate: '',
-           category:''
-       }
-   },
-   created () {
-       this.name = this.product.name //스프링에서 id에 맞게 받아온 정보들을 보여주기 위함
-       this.price = this.product.price
-       this.company = this.product.company
-       this.manufactureDate = this.product.manufactureDate
-       this.category=this.product.category
-   
-   },
-   methods: {
-       onSubmit () {
-           const { name, price, company, manufactureDate, category} = this
-           this.$emit('submit', {  name, price, company, manufactureDate, category })
-           //onSubmit을 통해 submit이 활성화됨으로 수정이 완료됨
-       }
-   }
+    props: {
+        product: {
+            type: Object,
+            required: true,
+            //required: true-꼭필요하다는 뜻
+        }
+    },
+    data() {
+        return {
+            name: '',
+            price: '',
+            company: '',
+            manufactureDate: '',
+            category: ''
+        }
+    },
+    created() {
+        this.name = this.product.name //스프링에서 id에 맞게 받아온 정보들을 보여주기 위함
+        this.price = this.product.price
+        this.company = this.product.company
+        this.manufactureDate = this.product.manufactureDate
+        this.category = this.product.category
+
+    },
+    methods: {
+        onSubmit() {
+            const { name, price, company, manufactureDate, category } = this
+            this.$emit('submit', { name, price, company, manufactureDate, category })
+            //onSubmit을 통해 submit이 활성화됨으로 수정이 완료됨
+        }
+    },
 }
 </script>
 <style lang="">
