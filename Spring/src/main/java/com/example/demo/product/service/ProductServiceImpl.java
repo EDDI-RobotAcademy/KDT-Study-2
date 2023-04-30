@@ -16,6 +16,17 @@ public class ProductServiceImpl implements ProductService {
 
     final private ProductRepository productRepository;
 
+    
+    @Override
+     public ProductEntity read(Long productId) {
+        Optional<ProductEntity> maybeProductEntity = productRepository.findById(productId);
+
+        if(maybeProductEntity.isEmpty()) {
+            log.info("정보가 없습니다!");
+            return null;
+        }
+    
+
     @Override
     public List<ProductEntity> productList() {
         return productRepository.findAll(Sort.by(Sort.Direction.DESC, "productId"));
@@ -30,4 +41,5 @@ public class ProductServiceImpl implements ProductService {
     public ProductEntity register(ProductEntity productEntity) {
         return productRepository.save(productEntity);
     }
+}
 }
