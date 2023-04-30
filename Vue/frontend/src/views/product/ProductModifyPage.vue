@@ -34,7 +34,7 @@ export default {
             //payload는 보낼 데이터임
             const productId = this.productId
             // 수정한 게시물의 id기때문에 this.사용
-            await this.requestBoardModifyToSpring({ name, price, company, expDate, manufactureDate, category, productId })
+            await this.requestProductModifyToSpring({ name, price, company, expDate, manufactureDate, category, productId })
             await this.$router.push({//수정 요청이 보내져 작동한 후에 읽기 페이지를 푸시함
                 name: 'ProductReadPage',
                 params: { productId: this.productId }
