@@ -43,4 +43,14 @@ public class ProductProblemController {
         log.info("productRead()");
         return productService.read(productId);
     }
+
+    @PutMapping("/{productId}")
+    public ProductEntity modifyProduct (@PathVariable("productId") Long productId,
+                                 @RequestBody RequestProductForm requestProductForm) {
+
+        log.info("modifyProduct(): " + requestProductForm + ", id: " + productId);
+
+        return productService.modify(productId, requestProductForm);
+
+    }
 }
