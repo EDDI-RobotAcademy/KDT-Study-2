@@ -38,7 +38,7 @@ export default {
   },
   requestDeleteProductToSpring({ }, productId) {
     return axiosInst
-      .delete(`/jpa-product/${productId}`)
+      .delete(`/product/${productId}`)
       .then((res) => {
         alert("삭제 성공!");
       })

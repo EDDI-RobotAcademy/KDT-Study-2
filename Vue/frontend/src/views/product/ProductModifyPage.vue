@@ -7,9 +7,11 @@
     </div>
 </template>
 <script>
-import ProductModifyForm from '@/components/product/ProductModifyForm.vue'
-import ProductModule from '@/store/product/productModule';
+import ProductModifyForm from '@/components/product/ProductModifyForm.vue';
 import { mapActions, mapState } from 'vuex';
+
+const productModule = 'productModule'
+
 export default {
     components: {
         ProductModifyForm
@@ -22,12 +24,12 @@ export default {
 
     },//productId를 받을 건데 required는 없으면 안된다는 뜻
     computed: {
-        ...mapState(ProductModule, ['product'])
+        ...mapState(productModule, ['product'])
 
     },
     methods: {
         ...mapActions(
-            ProductModule, ['reqeustProductToSpring', 'requestProductModifyToSpring']
+            productModule, ['requestProductToSpring', 'requestProductModifyToSpring']
         ),
         async onSubmit(payload) {
             const { name, price, company, expDate, manufactureDate, category } = payload
@@ -44,7 +46,7 @@ export default {
     },
     //라이프 사이클 주기중 크리에이티드 시점에 작동하는 부분
     created() {
-        this.reqeustProductToSpring(this.productId)
+        this.requestProductToSpring(this.productId)
     }
 
 }

@@ -31,10 +31,10 @@ export default {
     },
     methods: {
         ...mapActions(
-            productModule, ['requestProductToSpring', 'requestDeleteproductToSpring']
+            productModule, ['requestProductToSpring', 'requestDeleteProductToSpring']
         ),
         async onDelete() {
-            await this.requestProductToSpring(this.productId)
+            await this.requestDeleteProductToSpring(this.productId)
             await this.$router.push({ name: 'ProductListPage' })
         }
     },
