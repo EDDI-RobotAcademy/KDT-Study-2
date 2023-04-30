@@ -1,7 +1,13 @@
 <template lang="">
     <div>
 
-        <product-register-form @submit="onSubmit"/>
+        <h3 align="center">상품 목록</h3>
+
+        <br>
+
+        <product-register-form align="center" @submit="onSubmit"/>
+
+        <br>
     </div>
 </template>
 <script>
@@ -32,6 +38,11 @@ export default {
 
 }
 </script>
-<style lang="">
-    
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@500&display=swap');
+
+h3 {
+    font-family: 'Black Hans Sans';
+    font-size: 40px;
+}
 </style>
