@@ -2,6 +2,7 @@ package com.example.demo.product.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.Entity;
@@ -18,11 +19,16 @@ public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productId;
+    @Setter
     private String name;
+    @Setter
     private Integer price;
+    @Setter
     private String company;
+    @Setter
     private LocalDate manufactureDate;
     private LocalDate expDate;
+    @Setter
     private String category;
 
     public ProductEntity(String name, Integer price, String company, LocalDate manufactureDate, String category) {

@@ -1,5 +1,6 @@
 package com.example.demo.product.service;
 
+import com.example.demo.product.controller.form.RequestProductForm;
 import com.example.demo.product.entity.ProductEntity;
 import com.example.demo.product.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
@@ -42,4 +43,26 @@ public class ProductServiceImpl implements ProductService {
 
         return maybeProductEntity.get();
     }
+    @Override
+    public ProductEntity modify(Long productId, RequestProductForm requestProductForm) {
+
+        Optional<ProductEntity> maybeProductEntity = productRepository.findById(productId);
+
+        if (maybeProductEntity.isEmpty()) {
+            log.info("정보가 없습니다!");
+            return null;
+        }
+
+        ProductEntity productEntity = maybeProductEntity.get();
+
+        productEntity.setName(requestProductForm.getName());
+        productEntity.setPrice(requestProductForm.getPrice());
+        productEntity.setCompany(requestProductForm.getCompany());
+        productEntity.setManufactureDate(requestProductForm.getManufactureDate());
+        productEntity.setCategory(requestProductForm.getCategory());
+
+        return productRepository.save(productEntity);
+
+    }
+
 }
