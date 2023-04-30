@@ -1,6 +1,7 @@
 <template lang="">
     <div>
-        <h2>상품 게시판</h2>        
+        <p></p>
+        <h2 align="center">  상품 게시판</h2>        
         <p></p>
         <product-list-form :products="products"/>
         <div  align="center">
@@ -34,5 +35,5 @@ export default {
 }
 </script>
 <style lang="">
-    
+
 </style>
