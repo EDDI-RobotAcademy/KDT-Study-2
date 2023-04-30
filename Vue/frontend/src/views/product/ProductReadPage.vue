@@ -33,6 +33,13 @@ export default {
         ...mapActions(
             productModule, ['requestproductToSpring', 'requestDeleteproductToSpring']
         ),
+        async onDelete () {
+            await this.requestProductToSpring(this.productId)
+            await this.$router.push({ name: 'ProductListPage' })
+        }
+    },
+    created () {
+
 
         async onDelete() {
         await this.requestProductToSpring(this.productId)
@@ -42,7 +49,6 @@ export default {
     },
 
     created() {
-
         this.requestproductToSpring(this.productId)
     }
 }

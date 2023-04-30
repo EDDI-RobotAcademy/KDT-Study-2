@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.List;
 
 @Slf4j
@@ -40,7 +41,20 @@ public class ProductProblemController {
         return productService.register(requestProductForm.toProductEntity());
     }
 
+    @GetMapping("/{productId}")
+    public ProductEntity readProduct(@PathVariable("productId") Long productId) {
+        log.info("productRead()");
+        return productService.read(productId);
+    }
 
+    @DeleteMapping("/{productId}")
+    public void deleteProduct(@PathVariable("productId") Long productId) {
+        log.info("productRead()");
+
+
+        productService.delete(productId);
+    }
+    
     @GetMapping("/{productId}")
     public ProductEntity readProduct(@PathVariable("productId") Long productId) {
         log.info("productRead()");
@@ -53,5 +67,6 @@ public class ProductProblemController {
 
         productService.delete(productId);
     }
+
 
 }
