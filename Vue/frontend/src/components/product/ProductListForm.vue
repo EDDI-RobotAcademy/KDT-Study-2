@@ -1,6 +1,6 @@
 <template lang="">
     <div>
-        <h3>상품 목록</h3>
+        <h3 align="center">상품 목록</h3>
         <p></p>
         <table>
             <tr>
@@ -52,19 +52,18 @@ export default {
 }
 </script>
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@500&display=swap');
 
 h3 {
-    color: darkslateblue;
-    font-family: 'Song Myung', serif;
-    text-shadow: 4px 4px 4px cornflowerblue;
+    font-family: 'Black Hans Sans';
     font-size: 40px;
 }
 
 table {
     border: 4px solid mediumpurple;
-    font-family: 'Song Myung', serif;
+    font-family: 'Gothic A1';
     font-size: 20px;
+    margin: 10px;
 }
 
 td {
