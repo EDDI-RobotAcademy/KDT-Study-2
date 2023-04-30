@@ -1,7 +1,9 @@
 <template lang="">
     <div>
         <v-btn color = "red" @click = "readyToCreateProduct"> 제품 등록 버튼</v-btn>
+        <br>
         <div v-if = "isPressedButton">
+            <br>
         <form @submit.prevent="onSubmit">
         
             <table>
@@ -40,12 +42,14 @@
                     </td>
                 </tr>
             </table>
+            <br>
 
             <div>
                 <button type="submit">상품 등록</button><br>
-                <!--
-                <router-link : to="{name : ''}"></router-link>
-                -->
+                
+                <router-link :to="{ name: 'ProductListPage' }">
+                돌아가기
+                </router-link>
 
             </div>
         </form>
@@ -85,6 +89,17 @@ export default {
 
 }
 </script>
-<style lang="">
-    
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@500&display=swap');
+
+table {
+    border: 4px solid mediumpurple;
+    font-family: 'Gothic A1';
+    font-size: 20px;
+    margin: 10px;
+}
+
+td {
+    border: 2px solid lightskyblue;
+}
 </style>
