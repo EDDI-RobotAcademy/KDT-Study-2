@@ -56,10 +56,4 @@ export default {
       })
   },
 
-  requestProductToSpring({ commit }, productId) {
-    return axiosInst.get(`/product/${productId}`)
-      .then((res) => {
-        commit(REQUEST_PRODUCT_TO_SPRING, res.data)
-      })
-  },
 };
