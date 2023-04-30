@@ -33,7 +33,7 @@
                 </td>
             </tr>
        </table>
-   <div>
+    <div>
        <button type="submit">수정 완료</button>
        <!--수정 취소를 하면 읽기 페이지로 가도록 설정함 수정한 boardId에 맞춰서
        읽히도록 한다.-->

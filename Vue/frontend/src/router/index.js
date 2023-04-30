@@ -32,23 +32,30 @@ const routes = [
     component: ProductListPage
   },
   {
-    path: '/product-read-page',
+    path: '/product-read-page/:productId',
     name: 'ProductReadPage',
-    component: ProductReadPage
+    components: {
+      default: ProductReadPage
+    },
+    props: {
+      default: true
+    },
   },
-
-
   {
     path: '/product-register-page',
     name: 'ProductRegisterPage',
     component: ProductRegisterPage
   },
   {
-    path: '/product-modify-page',
+    path: '/product-modify-page/:productId',
     name: 'ProductModifyPage',
-    component: ProductModifyPage
+    components: {
+      default: ProductModifyPage
+    },
+    props: {
+      default: true,
+    }
   },
-
 ]
 
 const router = new VueRouter({
