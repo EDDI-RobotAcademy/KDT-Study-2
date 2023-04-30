@@ -7,6 +7,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Slf4j
 @RestController
 @RequiredArgsConstructor
@@ -14,6 +17,14 @@ import org.springframework.web.bind.annotation.*;
 public class ProductProblemController {
 
     final private ProductService productService;
+
+    @GetMapping("/list")
+    public List<ProductEntity> listProduct() {
+        List<ProductEntity> productList = productService.productList();
+
+        return productList;
+    }
+
 
     @DeleteMapping("/{productId}")
     public void deleteProduct(@PathVariable("productId") Long productId) {
