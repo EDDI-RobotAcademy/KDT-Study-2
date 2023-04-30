@@ -18,9 +18,6 @@
             </tr>
             <tr v-else v-for="product in products" :key="product.productId">
                 <td>
-                    {{ product.productId }}
-                </td>
-                <td>
                     <router-link :to="{
                         name: 'ProductReadPage',
                         params: { productId: product.productId.toString() }}">
@@ -29,6 +26,9 @@
                 </td>
                 <td>
                     {{ product.price }}
+                </td>
+                <td>
+                    {{ product.company }}
                 </td>
                 <td>
                     {{ product.expDate }}

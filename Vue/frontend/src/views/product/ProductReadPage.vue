@@ -1,7 +1,7 @@
 <template lang="">
     <div>
         <h2>상품 게시판</h2>
-        <board-read-form v-if="products" :product="products"/>
+        <product-read-form v-if="product" :product="product"/>
         <p v-else>로딩중 .......</p>
         <router-link :to="{ name: 'ProductModifyPage', params: { productId }}">
             게시물 수정
@@ -21,7 +21,7 @@ export default {
         ProductReadForm
     },
     props: {
-        ProductId: {
+        productId: {
             type: String,
             required: true,
         },
@@ -31,7 +31,7 @@ export default {
     },
     methods: {
         ...mapActions(
-            productModule, ['requestproductToSpring', 'requestDeleteproductToSpring']
+            productModule, ['requestProductToSpring', 'requestDeleteproductToSpring']
         ),
         async onDelete() {
             await this.requestProductToSpring(this.productId)
@@ -39,7 +39,7 @@ export default {
         }
     },
     created() {
-        this.requestproductToSpring(this.productId)
+        this.requestProductToSpring(this.productId)
     }
 }
 </script>
