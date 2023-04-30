@@ -17,6 +17,13 @@ public class ProductProblemController {
     final private ProductService productService;
 
 
+    @DeleteMapping("/{productId}")
+    public void deleteProduct(@PathVariable("productId") Long productId) {
+        log.info("productRead()");
+
+        productService.delete(productId);
+    }
+
 
     @PostMapping("/register")
     public ProductEntity registerProduct(@RequestBody RequestProductForm requestProductForm) {
@@ -24,6 +31,7 @@ public class ProductProblemController {
 
         return productService.register(requestProductForm.toProductEntity());
     }
+
 
     @GetMapping("/{productId}")
     public ProductEntity readProduct(@PathVariable("productId") Long productId) {
@@ -37,4 +45,5 @@ public class ProductProblemController {
 
         productService.delete(productId);
     }
+
 }
